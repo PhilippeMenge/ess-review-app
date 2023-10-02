@@ -9,37 +9,48 @@
                     <div class="options">
                         <a href="#" class="option"  style="text-decoration: none">FILMES</a>
                         <a href="#" class="option"  style="text-decoration: none">REVIEWS</a>
-                    </div>
-
-                </div>
-                <div class="user-icon">
-                    <img src="../../../assets/userIcon.png" alt="User-Avatar">
-                </div> 
-            </div>
-
+                    </div>                    
+                </div>   
+                <div class="dropdown">
+                  <button class="dropdown-btn" onclick="toggleDropdown()" id="dropdownBtn">
+                    <img src="../../../assets/userIcon.png" alt="">
+                      {{username}}
+                    <div class="arrow"></div>
+                  </button>
+                  <ul class="dropdown-content" id="dropdownContent">
+                    <li (click)="redirectToHome($event)"><a href="#">HOME</a></li>
+                    <li ><a href="#" (click)="redirectToProfile($event)">PERFIL</a></li>
+                    <li><a href="#" (click)="redirectToProfile($event)">FILMES</a></li>
+                    <li (click)="logout()"><a href="#">SAIR</a></li>
+                  </ul>
+                </div>  
+            </div>            
         </nav>
     </header>
-     <section class="title-container">
-        <h2>Editar Filme 1</h2>
-    </section>
-    <form class="form-container">
-        <div class="input-container title">
-            <label for="fname">Título</label>
-            <input [(ngModel)]="contentdto.title" type="text" name="title" id="title">     
-        </div>
-        <div class="input-container duration">
-            <label for="fname">Duração</label>
-            <input [(ngModel)]="contentdto.duration" type="number" name="duration" id="duration">     
-        </div>
-        <div class="input-container director">
-            <label for="fname">Diretor</label>
-            <input [(ngModel)]="contentdto.director" type="text" name="director" id="director">     
-        </div>
-        <div class="input-container genre">
-            <label for="fname">Gênero</label>
-            <input [(ngModel)]="contentdto.genre" type="text" name="genre" id="genre">     
-        </div>
-        <button (click)="editContent(contentdto)" class="edit-btn" type="submit">Atualizar</button>
-        <button (click)="removeContent(contentdto)" class="delete-btn" type="submit">Deletar</button>
-    </form>
+    <div>ola mundo</div>
+    <div class="content">
+        <form>
+          <section class="copy">
+            <h2>Editar Filme</h2>
+          </section>
+          <div class="input-container">
+            <label for="title">Título</label>
+            <input [(ngModel)]="contentDto.title" type="text" name="title" id="title">
+          </div>
+          <div class="input-container">
+            <label for="genre">Gênero</label>
+            <input [(ngModel)]="contentDto.genre" type="text" name="genre" id="genre">
+          </div>
+          <div class="input-container">
+            <label for="duration">Duração</label>
+            <input [(ngModel)]="contentDto.duration" type="number" name="duration" id="duration">
+          </div>
+          <div class="input-container">
+            <label for="director">Diretor</label>
+            <input [(ngModel)]="contentDto.director" type="text" name="director" id="director">
+          </div>
+          <button class="submit-btn" (click)="editContent(contentDto)" type="submit">Confirmar</button>
+        </form>
+      </div>
+    
 </div>

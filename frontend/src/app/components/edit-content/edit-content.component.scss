@@ -1,7 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap%27');
-.home-container {
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+.home {
+    &-container {
       width: 100%;
-      height: 50px;
+      height: 60px;
       background-color: #0F0B38;
       display: flex;
       justify-content: flex-start   ;
@@ -9,12 +10,12 @@
       position: fixed;
       top: 0;
       right: 0;
+    }
 }
 
 .logo {
     margin-left: 10px;
     margin-top: 30px;
-    align-items: center;
     img {
         width: 190px; /* Ajuste o tamanho da sua logo conforme necessário */
         height: 212px;
@@ -22,9 +23,9 @@
     }
 }
 .options {
-    margin-left: 500px;
+    margin-left: 450px;
   }
-
+  
   .option {
     color: #D8E0E8;
     font-family: Poppins;
@@ -33,11 +34,16 @@
     font-weight: 600;
     line-height: normal;
     margin-right: 100px;
-
+  
     &:hover {
         color: #3f51b5;
     }
   }
+.line-container{
+    border-bottom: 1.5px solid black;
+    height: 1.5px; 
+    width: 1080px;
+}
 .background-container{
     background-image: url('../../../assets/background.jpg');
     background-size: cover;
@@ -45,44 +51,130 @@
     min-height: 100vh;
 }
 
-
-.user-icon {
-    margin-top: 0.5px;
-    img {
-        width: 40px;
-        height: 40px;
-        flex-shrink: 0;
-    }
-    p{
-        color: white;
-    }
+.dropdown {
+  position: relative;
+  display: inline-block;
 }
 
-.form-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 30vh; 
-  }
+.dropdown-btn {
+  font-family: Poppins;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  background: #0F0B38;
+  font-size: 18px;
+  width: 100%;
+  border: none;
+  color: #D8E0E8;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.7em 0.5em;
+  border-radius: 0.5em;
+  cursor: pointer;
+  position: relative;
+}
+.dropdown-btn img {
+  width: 38px; /* Ajuste o tamanho conforme necessário */
+  height: 38px;
+  margin-right: 20px; /* Espaçamento entre a imagem e o texto */
+}
 
-  .input-container {
-    margin: 10px; 
-  }
+.arrow {
+  margin-left: 5px;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 6px solid #D8E0E8;
+  transition: transform ease-in-out 0.3s;
+}
 
-  .edit-btn {
-    margin-top: 20px;
-  }
+.dropdown-content {
+  list-style: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 150%;
+  visibility: hidden;
+  overflow: hidden;
+}
 
-  .delete-btn {
-    margin-top: 20px;
-  }
+.dropdown-content li {
+  background: #0F0B38;
+  border-radius: 0.5em;
+  position: relative;
+  left: 0;
+  transition: 0.5s;
+}
 
-  .title-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 200px;
-    color: #D8E0E8;
-  }
+.dropdown-content li:hover {
+  background: #1d1f24;
+}
+
+.dropdown-content li a {
+  display: block;
+  padding: 0.7em 0.5em;
+  color: #D8E0E8;
+  font-family: Poppins;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  margin: 0.1em 0;
+  text-decoration: none;
+}
+
+/* Mostrar a lista quando o botão está em foco */
+.dropdown-btn:focus + .dropdown-content {
+  visibility: visible;
+}
+
+.content {
+  max-width: 400px;
+  background-color: rgba(255, 255, 255, 0.8); /* Adapte a opacidade conforme necessário */
+  margin-top: 100px;
+  margin-left: 370px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+form {
+  display:flex;
+  flex-direction: column;
+}
+
+.copy {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.input-container {
+  margin-bottom: 15px;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+
+.submit-btn {
+  background-color: #17093a;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px; /* Adicionei margem superior para afastar do último input */
+}
+
+.submit-btn:hover {
+  background-color: black;
+}
